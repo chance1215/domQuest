@@ -2,7 +2,8 @@
 //document.querySelectorAll() will give us an array-like LIST of elements that can be identified with the given CSS selector.
 
 let cashLabel = document.querySelector('#cashTotal');
-
+cashLabel.innetText = ""
+let cashTotal = 0
 let smallQuestButton = document.querySelector('#smallQuest');
 let longQuestButton = document.querySelector('#longQuest');
 let bossFightButton = document.querySelector('#bossFight');
@@ -16,15 +17,27 @@ bossFightButton.addEventListener('click', takeBossFight);
 
 //TODO: alter the behavior of the takeSmallQuest, takeLongQuest, and takeBossFight functions so that they randomly add a value within their defined ranges to your total cash!
 function takeSmallQuest(){
-  alert('you took on the small quest!')
+let randomNum = Math.floor(Math.random()*10)+ 10
+cashTotal += randomNum
+return cashLabel.innerText = cashTotal
+
+  //alert('you took on the small quest!')
 }
 
 function takeLongQuest(){
-  alert('you took on the long quest!')
+  let randomNum = Math.floor(Math.random()*20)+ 30
+  cashTotal += randomNum
+  return cashLabel.innerText = cashTotal
+
+  //alert('you took on the long quest!')
 }
 
 function takeBossFight(){
-  alert('you took on the boss fight!')
+  let randomNum = Math.floor(Math.random()*30)+ 70
+  cashTotal += randomNum
+return cashLabel.innerText = cashTotal
+
+  //alert('you took on the boss fight!')
 }
 //HINT: All visible elements on HTML web page will be represented as strings when they are accessed using javascript
 //HINT: To get the text value of the cash that's currently on the page, access it's inner text using cashLabel.innerText
